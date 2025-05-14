@@ -1,0 +1,57 @@
+/* Components/Popup.css */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-content {
+    position: relative;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    text-align: center;
+  }
+  
+  .popup-close {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 999;
+    margin: 0 !important;
+    color: #000000;
+  }
+  .popup-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  .popup-gesture {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #493080;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .popup-gesture:hover {
+    background: #683fbe;
+  }
+  @media (min-width: 320px) and (max-width: 480px){
+    .popup-content{
+        width: 90%;
+    }
+  }
