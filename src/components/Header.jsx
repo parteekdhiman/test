@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import logoLight from "./images/logo-light.svg";
-import logoDark from "./images/logo-dark.svg";
 import coursecontent from "./Coursecontent";
 import { Link } from "react-router-dom";
 const Header = ({ page }) => {
   const [stickyMenu, setStickyMenu] = useState(false);
   const [navigationOpen, setNavigationOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
   const [dropdown, setDropdown] = useState(false);
 
   // Handle scroll event for sticky menu
@@ -29,7 +27,6 @@ const Header = ({ page }) => {
         <div className="vd to/4 tc wf yf">
           <Link to="index.html">
             <img className="om" src={logoLight} alt="Logo Light" />
-            <img className="xc nm" src={logoDark} alt="Logo Dark" />
           </Link>
 
           {/* Hamburger Toggle BTN */}

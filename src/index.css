@@ -161,9 +161,7 @@
 .swiper-centered > .swiper-wrapper > .swiper-slide {
   scroll-snap-align: center center;
 }
-/*!*******************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/swiper/modules/pagination/pagination.min.css ***!
-  \*******************************************************************************************************************************************************/
+
 .swiper-pagination {
   position: absolute;
   text-align: center;
@@ -335,17 +333,6 @@ button.swiper-pagination-bullet {
 .swiper-pagination-lock {
   display: none;
 }
-/*!*******************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/css/style.css (1) ***!
-  \*******************************************************************************************************************/
-/*
-! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com
-*/
-
-/*
-1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
-2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
-*/
 
 *,
 ::before,
@@ -361,12 +348,6 @@ button.swiper-pagination-bullet {
   --tw-content: "";
 }
 
-/*
-1. Use a consistent sensible line-height in all browsers.
-2. Prevent adjustments of font size after orientation changes in iOS.
-3. Use a more readable tab size.
-4. Use the user's configured `sans` font-family by default.
-*/
 
 html {
   line-height: 1.5; /* 1 */
