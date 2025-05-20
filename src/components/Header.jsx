@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import logoLight from "./images/logo-light.svg";
 import coursecontent from "./Coursecontent";
 import { Link } from "react-router-dom";
+
 const Header = ({ page }) => {
   const [stickyMenu, setStickyMenu] = useState(false);
   const [navigationOpen, setNavigationOpen] = useState(false);
@@ -19,13 +20,18 @@ const Header = ({ page }) => {
     };
   }, []);
 
+  // Close the mobile navigation when a link is clicked
+  const handleLinkClick = () => {
+    setNavigationOpen(false);
+  };
+
   return (
     <header
-      className={`g s r vd ya cj ${stickyMenu ? "hh sm _k dj bl ll" : ""}`}
+      className={`g s r vd _a cj ${stickyMenu ? "hh sm _k dj bl ll" : ""}`}
     >
       <div className="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
         <div className="vd to/4 tc wf yf">
-          <Link to="index.html">
+          <Link to="index.html" onClick={handleLinkClick}>
             <img className="om" src={logoLight} alt="Logo Light" />
           </Link>
 
@@ -78,12 +84,12 @@ const Header = ({ page }) => {
           <nav>
             <ul className="tc _o sf yo cg ep">
               <li>
-                <Link to="/" className={`xl ${page === "home" ? "mk" : ""}`}>
+                <Link to="/" onClick={handleLinkClick} className={`xl ${page === "home" ? "mk" : ""}`}>
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="xl">
+                <Link to="/about" onClick={handleLinkClick} className="xl">
                   About
                 </Link>
               </li>
@@ -115,6 +121,7 @@ const Header = ({ page }) => {
                         <li key={i + 1}>
                           <Link
                             to={`/Course/${v.name}`}
+                            onClick={handleLinkClick}
                             className={`xl ${page === "blog-grid" ? "mk" : ""}`}
                           >
                             {v.title}
@@ -125,6 +132,7 @@ const Header = ({ page }) => {
                   <li>
                     <Link
                       to="/CourseList"
+                      onClick={handleLinkClick}
                       className={`xl ${page === "blog-grid" ? "mk" : ""}`}
                     >
                       View all course
@@ -134,7 +142,7 @@ const Header = ({ page }) => {
                 {/* Dropdown End */}
               </li>
               <li>
-                <Link to="/contact" className="xl">
+                <Link to="/contact" onClick={handleLinkClick} className="xl">
                   Contact
                 </Link>
               </li>
@@ -145,6 +153,7 @@ const Header = ({ page }) => {
             <a
               href="https://wa.me/8679686796"
               target="_newus"
+              onClick={handleLinkClick}
               className={`ek pk xl ${page === "home" ? "nk yl" : ""} ${
                 page === "home" && stickyMenu ? "ok" : ""
               }`}
@@ -153,6 +162,7 @@ const Header = ({ page }) => {
             </a>
             <a
               href="tel:8679686796"
+              onClick={handleLinkClick}
               className={`lk gh dk rg tc wf xf _l gi hi ${
                 page === "home" ? "hh/[0.15]" : ""
               } ${page === "home" && stickyMenu ? "sh" : ""}`}

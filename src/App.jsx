@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { ErrorBoundary } from "react-error-boundary";
-
+import { ToastContainer } from "react-toastify";
 // Import components
 import Main from "./components/Main";
 import Header from "./components/Header";
@@ -39,12 +39,8 @@ const LoadingSpinner = () => (
 
 function App() {
   return (
-    <ErrorBoundary
-      FallbackComponent={ErrorFallback}
-      onReset={() => {
-        // Optional: Reset the state of your app here
-      }}
-    >
+    <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => {}}>
+      <ToastContainer />
       <ScrollToTop />
       <Header />
       <Suspense fallback={<LoadingSpinner />}>

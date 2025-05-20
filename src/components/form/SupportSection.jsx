@@ -4,6 +4,16 @@ import shape06 from "../images/shape-06.svg";
 import shape07 from "../images/shape-07.svg";
 import shape12 from "../images/shape-12.svg";
 import shape13 from "../images/shape-13.svg";
+import axios from "axios";
+import { toast, Bounce } from "react-toastify";
+import { useRef } from "react";
+const debounce = (func, delay) => {
+  let timeoutId;
+  return (...args) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => func(...args), delay);
+  };
+};
 const SupportSection = () => {
   // State to replace Alpine.js x-data
   const [formData, setFormData] = useState({
@@ -13,6 +23,17 @@ const SupportSection = () => {
     subject: "",
     message: "",
   });
+
+  const [sending, setSending] = useState(false);
+
+  const debouncedHandleChange = useRef(
+    debounce((name, value) => {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+    }, 300)
+  ).current;
 
   // Section title data (replaces Alpine.js x-data)
   const sectionTitle = "Let's Stay Connected";
@@ -28,12 +49,110 @@ const SupportSection = () => {
     }));
   };
 
-  // Handle form submission
-  const handleSubmit = (e) => {
+  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  const validatePhone = (phone) => /^[0-9]{10}$/.test(phone); // Adjust for your region (this is a 10-digit format)
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Form submission logic here
-    console.log("Form submitted:", formData);
-    // You might want to add axios or fetch call here to submit the form
+    if (sending) return;
+
+    const { fullname, email, phone, subject, message } = formData;
+
+    if (!fullname || !email || !message) {
+      toast.warn("Full name, email, and message are required.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+      // alert("Full name, email, and message are required.");
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      toast.warn("Please enter a valid email address.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+      // alert("Please enter a valid email address.");
+      return;
+    }
+
+    if (phone && !validatePhone(phone)) {
+      toast.warn("Please enter a valid 10-digit phone number.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+      // alert("Please enter a valid 10-digit phone number.");
+      return;
+    }
+
+    setSending(true);
+
+    try {
+      const res = await axios.post("http://localhost:3000/support-form", {
+        ...formData,
+        user_course: subject,
+      });
+
+      console.log("Form submitted successfully:", res.data);
+      toast.success("Thank you! Your message has been sent.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+      // alert("Thank you! Your message has been sent.");
+
+      setFormData({
+        fullname: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+       toast.error("Something went wrong. Please try again later.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+      // alert("Something went wrong. Please try again later.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -259,8 +378,12 @@ const SupportSection = () => {
               </div>
 
               <div className="tc xf">
-                <button className="vc rg lk gh ml il hi gi _l">
-                  Send Message
+                <button
+                  type="submit"
+                  className="vc rg lk gh ml il hi gi _l"
+                  disabled={sending}
+                >
+                  {sending ? "Sending..." : "Send Message"}
                 </button>
               </div>
             </form>
