@@ -110,7 +110,7 @@ const SupportSection = () => {
     setSending(true);
 
     try {
-      const res = await axios.post("http://localhost:3000/support-form", {
+      const res = await axios.post("https://backendapp-2a7b.onrender.com/support-form", {
         ...formData,
         user_course: subject,
       });
