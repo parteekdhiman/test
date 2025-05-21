@@ -1,10 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="src/components/images/logo-dark.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <meta
+      name="keywords"
+      content="Newus,Newus.in,Web Designing in Dharamshala,Web Developament in Dharamshala,website,development,Data Analytics,Best courses,it courses,web hosting,fast websitemaking,Designe by Professionals designers,by website at affordable cost c++, nodejs, expressjs, mongodb, Reactjs, Telly , Banking and Finance ,Banking and Finance in Dharamshala,Full Stack Software Engineering in Dharamshala ,Full Stack Software Engineering,Data science,Data science in Dharamshala, Digital Marketing Courses ,Digital Marketing Courses in Dharamshala ,Advance Digital Marketing , Advance Digital Marketing in Dharamshala,Web Development using PHP,Advance certificate in Web Development using PHP ,Full Stack Software Engineering Pro , Full Stack Software Engineering , Banking and Finance,Data Science,Cyber security Graphic and Animation,Digital Marketing with AI
+      ,Web Development Using PHP"
+    />
+    <meta
+      name="description"
+      content="Tutorial, Free Online Tutorial, android in Dharamshala, java in Dharamshala, javascript in Dharamshala, ajax in Dharamshala, core java, sql, python, php, c language php , c++, nodejs, expressjs, mongodb, Reactjs, Telly , Banking and Finance ,Banking and Finance in Dharamshala . for beginners and professionals. Meachine Learning ,Full Stack Software Engineering Pro , Full Stack Software Engineering , Banking and Finance,Data Science,Cyber security Graphic and Animation,Digital Marketing with AI
+      ,Web Development Using PHP"
+    />
+    <title>
+      Newus Dharamshala || Educational institution in Dharamsala, Himachal
+      Pradesh
+    </title>
     <style>
       /* Preloader styles */
       body {
@@ -12,7 +25,7 @@
         padding: 0;
         overflow-x: hidden;
       }
-      
+
       #preloader {
         position: fixed;
         top: 0;
@@ -26,16 +39,17 @@
         z-index: 9999;
         transition: opacity 0.5s ease-out;
       }
-      
-      /* From Uiverse.io by SchawnnahJ */ 
+
+      /* From Uiverse.io by SchawnnahJ */
       .loader {
         position: relative;
         width: 2.5em;
         height: 2.5em;
         transform: rotate(165deg);
       }
-      
-      .loader:before, .loader:after {
+
+      .loader:before,
+      .loader:after {
         content: "";
         position: absolute;
         top: 50%;
@@ -46,56 +60,64 @@
         border-radius: 0.25em;
         transform: translate(-50%, -50%);
       }
-      
+
       .loader:before {
         animation: before8 2s infinite;
       }
-      
+
       .loader:after {
         animation: after6 2s infinite;
       }
-      
+
       @keyframes before8 {
         0% {
           width: 0.5em;
-          box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+          box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75),
+            -1em 0.5em rgba(111, 202, 220, 0.75);
         }
         35% {
           width: 2.5em;
-          box-shadow: 0 -0.5em rgba(225, 20, 98, 0.75), 0 0.5em rgba(111, 202, 220, 0.75);
+          box-shadow: 0 -0.5em rgba(225, 20, 98, 0.75),
+            0 0.5em rgba(111, 202, 220, 0.75);
         }
         70% {
           width: 0.5em;
-          box-shadow: -1em -0.5em rgba(225, 20, 98, 0.75), 1em 0.5em rgba(111, 202, 220, 0.75);
+          box-shadow: -1em -0.5em rgba(225, 20, 98, 0.75),
+            1em 0.5em rgba(111, 202, 220, 0.75);
         }
         100% {
-          box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+          box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75),
+            -1em 0.5em rgba(111, 202, 220, 0.75);
         }
       }
-      
+
       @keyframes after6 {
         0% {
           height: 0.5em;
-          box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+          box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75),
+            -0.5em -1em rgba(233, 169, 32, 0.75);
         }
         35% {
           height: 2.5em;
-          box-shadow: 0.5em 0 rgba(61, 184, 143, 0.75), -0.5em 0 rgba(233, 169, 32, 0.75);
+          box-shadow: 0.5em 0 rgba(61, 184, 143, 0.75),
+            -0.5em 0 rgba(233, 169, 32, 0.75);
         }
         70% {
           height: 0.5em;
-          box-shadow: 0.5em -1em rgba(61, 184, 143, 0.75), -0.5em 1em rgba(233, 169, 32, 0.75);
+          box-shadow: 0.5em -1em rgba(61, 184, 143, 0.75),
+            -0.5em 1em rgba(233, 169, 32, 0.75);
         }
         100% {
-          box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+          box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75),
+            -0.5em -1em rgba(233, 169, 32, 0.75);
         }
       }
-      
+
       .preloader-hidden {
         opacity: 0;
         visibility: hidden;
       }
-      
+
       #root {
         min-height: 100vh;
       }
@@ -106,44 +128,70 @@
     <div id="preloader">
       <div class="loader"></div>
     </div>
-    
+
     <div id="root"></div>
-    
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-11202732840"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "AW-11202732840");
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-11316199034"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "AW-11316199034");
+    </script>
     <script>
       // Preloader script
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener("DOMContentLoaded", function () {
         // Simulate minimum load time (optional)
-        setTimeout(function() {
-          const preloader = document.getElementById('preloader');
-          
+        setTimeout(function () {
+          const preloader = document.getElementById("preloader");
+
           // Start listening for React app load
-          const observer = new MutationObserver(function(mutations) {
+          const observer = new MutationObserver(function (mutations) {
             // Check if React has rendered anything in the root
-            if (document.getElementById('root').children.length > 0) {
+            if (document.getElementById("root").children.length > 0) {
               // Add class to fade out preloader
-              preloader.classList.add('preloader-hidden');
-              
+              preloader.classList.add("preloader-hidden");
+
               // Remove preloader from DOM after animation completes
-              setTimeout(function() {
+              setTimeout(function () {
                 preloader.remove();
               }, 500);
-              
+
               // Disconnect the observer
               observer.disconnect();
             }
           });
-          
+
           // Start observing
-          observer.observe(document.getElementById('root'), {
+          observer.observe(document.getElementById("root"), {
             childList: true,
-            subtree: true
+            subtree: true,
           });
-          
+
           // Fallback: If for some reason React doesn't load properly, remove preloader after timeout
-          setTimeout(function() {
-            if (!preloader.classList.contains('preloader-hidden')) {
-              preloader.classList.add('preloader-hidden');
-              setTimeout(function() {
+          setTimeout(function () {
+            if (!preloader.classList.contains("preloader-hidden")) {
+              preloader.classList.add("preloader-hidden");
+              setTimeout(function () {
                 preloader.remove();
               }, 500);
             }
@@ -151,9 +199,9 @@
         }, 300); // Optional minimum display time for preloader (300ms)
       });
     </script>
-    
+
     <script type="module" src="/src/main.jsx"></script>
-    
+
     <!-- Preload critical resources -->
     <link rel="preload" href="/src/main.jsx" as="script" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
