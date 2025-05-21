@@ -107,7 +107,7 @@ function Course() {
       <brochure.Provider
         value={{ download: course.brochure, name: course.name }}
       >
-        <div className="p-5 do"></div>
+        <div className="p-5 do ir en"></div>
         <section className="i pg gh ji">
           {/* Bg Shape */}
           <img className="h p q" src={bgShape} alt="Bg Shape" />

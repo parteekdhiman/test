@@ -4,8 +4,8 @@ import Courses from "./Courses";
 function CourseList() {
   return (
     <>
-      <div className="ir do">
-        <div className="h-full flex w-full justify-center items-center p-8"></div>
+      <div>
+        <div className="do ir sp i pg"></div>
         <Courses another={coursecontent} />
       </div>
     </>

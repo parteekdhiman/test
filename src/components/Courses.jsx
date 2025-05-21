@@ -76,7 +76,9 @@ const ArrowIcon = () => (
 );
 
 const Badge = ({ text, color }) => (
-  <span className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold ${color}`}>
+  <span
+    className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold ${color}`}
+  >
     {text}
   </span>
 );
@@ -86,14 +88,17 @@ const CourseCard = ({ course, index }) => {
   const showJobAssistance = job === "100% Job Assistance";
 
   const animationDelay = `${index * 0.1}s`;
-  
+
   return (
-    <div 
+    <div
       className="rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between bg-white transform hover:-translate-y-2"
-      style={{ animationDelay, animationFillMode: 'both' }}
+      style={{ animationDelay, animationFillMode: "both" }}
     >
       <div className="relative overflow-hidden group ac">
-        <Link to={`/Course/${name}`} aria-label={`View details of ${title} course`}>
+        <Link
+          to={`/Course/${name}`}
+          aria-label={`View details of ${title} course`}
+        >
           <LazyLoadImage
             className="w-full h-52 object-cover transition-transform duration-700 group-hover:scale-110"
             src={image}
@@ -104,27 +109,29 @@ const CourseCard = ({ course, index }) => {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60 group-hover:opacity-70 transition-opacity duration-300"></div>
         </Link>
-        
-        {svg && (
-          <div className="absolute top-0 left-4 text-white">
-            {svg}
-          </div>
-        )}
+
+        {svg && <div className="absolute top-0 left-4 text-white">{svg}</div>}
       </div>
-      
+
       <div className="px-6 py-3 flex flex-row items-center justify-between bg-gray-50 border-b border-gray-100 ac">
-        <span className="py-1 text-xs font-medium text-gray-700 flex flex-row items-center" title="Course Duration">
+        <span
+          className="py-1 text-xs font-medium text-gray-700 flex flex-row items-center"
+          title="Course Duration"
+        >
           <ClockIcon />
           <span className="ml-2">{Duration}</span>
         </span>
         {showJobAssistance && (
-          <span className="py-1 text-xs font-medium text-gray-700 flex flex-row items-center" title="Job Assistance">
+          <span
+            className="py-1 text-xs font-medium text-gray-700 flex flex-row items-center"
+            title="Job Assistance"
+          >
             <JobIcon />
             <span className="ml-2">{job}</span>
           </span>
         )}
       </div>
-      
+
       <div className="px-6 py-4 flex-grow">
         <Link
           to={`/Course/${name}`}
@@ -137,11 +144,12 @@ const CourseCard = ({ course, index }) => {
           {out.length > 120 ? `${out.substring(0, 120)}...` : out}
         </p>
       </div>
-      
+
       <div className="px-6 py-4 border-t border-gray-100">
-        <Link 
-          to={`/Course/${name}`} 
-          className="w-full flex items-center justify-between bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 transition-all duration-300 group" style={{padding:"10px"}}
+        <Link
+          to={`/Course/${name}`}
+          className="w-full flex items-center justify-between bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 transition-all duration-300 group"
+          style={{ padding: "10px" }}
           aria-label={`Enroll in ${title} course`}
         >
           <span className="text-white p-2">View Course Details</span>
@@ -151,7 +159,6 @@ const CourseCard = ({ course, index }) => {
   );
 };
 
-// Category section component for cleaner structure
 const CategorySection = ({ title, courses }) => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = React.useRef(null);
@@ -179,32 +186,40 @@ const CategorySection = ({ title, courses }) => {
   }, []);
 
   return (
-    <section 
+    <section
       ref={sectionRef}
-      className={`py-12 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
-      aria-labelledby={`${title.toLowerCase().replace(/\s+/g, '-')}-section`}
+      className={`py-12 transition-opacity duration-1000  ${
+        isVisible ? "opacity-100" : "opacity-0"
+      }`}
+      aria-labelledby={`${title.toLowerCase().replace(/\s+/g, "-")}-section`}
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center mb-12">
-          <h2 
-            id={`${title.toLowerCase().replace(/\s+/g, '-')}-section`}
+          <h2
+            id={`${title.toLowerCase().replace(/\s+/g, "-")}-section`}
             className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 relative pr zp qb"
           >
             {title}
           </h2>
           <p className="text-gray-600 text-center max-w-2xl qb">
-            {title === "Flagship Programs" 
+            {title === "Flagship Programs"
               ? "Our signature courses designed for comprehensive skill development and mastery"
               : title === "Placement Assistance Programs"
-                ? "Specialized programs with dedicated career support and industry connections"
-                : "Quick, focused courses to build specific skills in a shorter timeframe"
-            }
+              ? "Specialized programs with dedicated career support and industry connections"
+              : "Quick, focused courses to build specific skills in a shorter timeframe"}
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 qb" style={{padding:" 0px 34px"}}>
+
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 qb"
+          style={{ padding: " 0px 34px" }}
+        >
           {courses.map((course, index) => (
-            <CourseCard key={`${course.name}-${index}`} course={course} index={index} />
+            <CourseCard
+              key={`${course.name}-${index}`}
+              course={course}
+              index={index}
+            />
           ))}
         </div>
       </div>
@@ -212,19 +227,32 @@ const CategorySection = ({ title, courses }) => {
   );
 };
 
-// Main Courses component with SEO optimization
-function Courses({ another, pageTitle = "Professional Online Courses", pageDescription = "Explore our wide range of online courses with job assistance and expert instruction." }) {
+function Courses({
+  another,
+  pageTitle = "Professional Online Courses",
+  pageDescription = "Explore our wide range of online courses with job assistance and expert instruction.",
+}) {
   // Filter courses by category
-  const flagshipCourses = another.filter(course => course.name && course.flag === "flag");
-  const placementCourses = another.filter(course => course.name && course.palcement === "Placement-Assistance-Programs");
-  const shortTermCourses = another.filter(course => course.name && course.palcement === "shot");
+  const flagshipCourses = another.filter(
+    (course) => course.name && course.flag === "flag"
+  );
+  const placementCourses = another.filter(
+    (course) =>
+      course.name && course.palcement === "Placement-Assistance-Programs"
+  );
+  const shortTermCourses = another.filter(
+    (course) => course.name && course.palcement === "shot"
+  );
 
   return (
     <>
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
-        <meta name="keywords" content="online courses, professional training, job assistance, career development, programming courses, web development" />
+        <meta
+          name="keywords"
+          content="online courses, professional training, job assistance, career development, programming courses, web development"
+        />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
         <meta property="og:type" content="website" />
@@ -233,41 +261,47 @@ function Courses({ another, pageTitle = "Professional Online Courses", pageDescr
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ItemList",
-            "itemListElement": [
+            itemListElement: [
               ...flagshipCourses.map((course, index) => ({
                 "@type": "Course",
-                "position": index + 1,
-                "url": `/Course/${course.name}`,
-                "name": course.title,
-                "description": course.out,
-                "provider": {
+                position: index + 1,
+                url: `/Course/${course.name}`,
+                name: course.title,
+                description: course.out,
+                provider: {
                   "@type": "Organization",
-                  "name": "Your Academy Name"
-                }
-              }))
-            ]
+                  name: "Your Academy Name",
+                },
+              })),
+            ],
           })}
         </script>
       </Helmet>
-      
-      <main>
 
-
+      <main className="">
         {/* Flagship Programs */}
         {flagshipCourses.length > 0 && (
-          <CategorySection title="Flagship Programs" courses={flagshipCourses} />
+          <CategorySection
+            title="Flagship Programs"
+            courses={flagshipCourses}
+          />
         )}
 
         {/* Placement Assistance Programs */}
         {placementCourses.length > 0 && (
-          <CategorySection title="Placement Assistance Programs" courses={placementCourses} />
+          <CategorySection
+            title="Placement Assistance Programs"
+            courses={placementCourses}
+          />
         )}
 
         {/* Short Term Programs */}
         {shortTermCourses.length > 0 && (
-          <CategorySection title="Short Term Programs" courses={shortTermCourses} />
+          <CategorySection
+            title="Short Term Programs"
+            courses={shortTermCourses}
+          />
         )}
-        
       </main>
 
       {/* Custom styles for animations and transitions */}
@@ -282,11 +316,11 @@ function Courses({ another, pageTitle = "Professional Online Courses", pageDescr
             transform: translateY(0);
           }
         }
-        
+
         .grid > div {
           animation: fadeInUp 0.6s ease forwards;
         }
-        
+
         .course-button {
           display: flex;
           align-items: center;
@@ -299,15 +333,15 @@ function Courses({ another, pageTitle = "Professional Online Courses", pageDescr
           font-weight: 500;
           transition: all 0.3s ease;
         }
-        
+
         .course-button:hover {
           background-color: #2563eb;
         }
-        
+
         .course-button .arrow-icon {
           transition: transform 0.3s ease;
         }
-        
+
         .course-button:hover .arrow-icon {
           transform: translateX(4px);
         }
