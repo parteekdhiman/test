@@ -22,7 +22,7 @@ const BlogsSection = () => {
       {/* Section Title Start */}
       <div>
         <div
-          className="animate_top bb ze rj ki xn vq"
+          className="fade-up bb ze rj ki xn vq"
           data-sr-id="34"
           style={{
             visibility: "visible",
@@ -40,7 +40,7 @@ const BlogsSection = () => {
 
       <div className="bb ye ki xn vq jb jo">
         <div className="wc qf pn xo zf iq">
-          <div className="animate_top sg vk rm xm">
+          <div className="fade-up sg vk rm xm">
             <Swiper
               modules={[Autoplay, Pagination]}
               spaceBetween={30}
@@ -83,7 +83,7 @@ const CourseCard = ({ course }) => {
 
   return (
     <div
-      className="animate_top sg vk rm xm"
+      className="fade-up sg vk rm xm"
       style={{
         visibility: "visible",
         opacity: 1,

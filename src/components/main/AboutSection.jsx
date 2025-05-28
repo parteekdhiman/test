@@ -13,7 +13,7 @@ const AboutSection = () => {
       <div className="bb ze ki xn wq">
         <div className="tc wf gg qq">
           {/* About Images */}
-          <div className="animate_left xc gn gg jn/2 i">
+          <div className="fade-left xc gn gg jn/2 i">
             <div>
               <img src={shape05} alt="Shape" className="h -ud-left-5 x" />
               <img src={about01} alt="About" className="ib" />
@@ -27,7 +27,7 @@ const AboutSection = () => {
           </div>
 
           {/* About Content */}
-          <div className="animate_right jn/2">
+          <div className="fade-right jn/2">
             <h4 className="ek yj mk gb">Why Choose Us</h4>
             <h2 className="fk vj zp pr kk wm qb">
               We Make Our Student happy by giving Best Education.

@@ -2,7 +2,8 @@ import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { ErrorBoundary } from "react-error-boundary";
 import { ToastContainer } from "react-toastify";
-// Import components
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Main from "./components/Main";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -38,6 +39,15 @@ const LoadingSpinner = () => (
 );
 
 function App() {
+  AOS.init({
+    offset: 120,
+    delay: 0,
+    duration: 400,
+    easing: "ease",
+    once: false,
+    mirror: false,
+    anchorPlacement: "top-bottom",
+  });
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => {}}>
       <ToastContainer />

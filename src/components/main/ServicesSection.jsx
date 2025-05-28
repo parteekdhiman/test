@@ -78,7 +78,7 @@ const ServicesSection = () => {
     <section className="lj tp kr">
       {/* Section Title Start */}
       <div>
-        <div className="animate_top bb ze rj ki xn vq">
+        <div className="fade-up bb ze rj ki xn vq">
           <h2 className="fk vj pr kk wm on/5 gq/2 bb _b">{sectionTitle}</h2>
           {/* <p className="bb on/5 wo/5 hq">{sectionTitleText}</p> */}
         </div>
@@ -91,7 +91,7 @@ const ServicesSection = () => {
           {serviceItems.map((item) => (
             <div
               key={item.id}
-              className="animate_top sg oi pi zq ml il am cn _m"
+              className="fade-up sg oi pi zq ml il am cn _m"
             >
               <img src={item.icon} alt="Icon" />
               <h4 className="ek zj kk wm nb _b">{item.title}</h4>

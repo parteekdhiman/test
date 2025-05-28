@@ -8,7 +8,7 @@ const TrustedBrands = () => {
   return (
     <section className="pj vp mr">
       <div>
-        <div className="animate_top bb ze rj ki xn vq">
+        <div className="fade-up bb ze rj ki xn vq">
           <h2 className="fk vj pr kk wm on/5 gq/2 bb _b">{sectionTitle}</h2>
           <p className="bb on/5 wo/5 hq">{sectionTitleText}</p>
         </div>
@@ -17,7 +17,7 @@ const TrustedBrands = () => {
       <div className="bb ze ah ch pm hj xp ki xn 2xl:ud-px-49 bc">
         <div className="wc rf qn zf cp kq xf wf">
           {[1, 2, 3, 4, 5, 6].map((num) => (
-            <a href="#" className="rc animate_top" key={num}>
+            <a href="#" className="rc fade-up" key={num}>
               <img
                 className="tk ml il zl om"
                 src={`images/brand-light-0${num}.svg`}

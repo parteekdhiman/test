@@ -76,7 +76,7 @@ const StatsSection = () => {
       <div className="bb ze i va ki xn br">
         <div className="tc uf sn tn xf un gg">
           {statsData.map((stat) => (
-            <div key={stat.id} className="animate_top me/5 ln rj">
+            <div key={stat.id} className="fade-up me/5 ln rj">
               <h2 className="gk vj zp or kk wm hc">{stat.number}</h2>
               <p className="ek bk aq">{stat.title}</p>
             </div>

@@ -25,7 +25,7 @@ const HeroSection = () => {
         {/* Hero Content */}
         <div className="bb ze ki xn 2xl:ud-px-0">
           <div className="tc _o">
-            <div className="animate_left jn/2">
+            <div className="fade-left jn/2">
               <h1 className="fk vj zp or kk wm wb">
                 Welcome to the World of Technologies.
               </h1>

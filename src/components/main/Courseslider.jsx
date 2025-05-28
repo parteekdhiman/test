@@ -32,7 +32,7 @@ function Courser() {
   return (
     <>
       <div className="animate_top bb ze rj ki xn vq">
-        <h3 className="fk vj ac rq yn">
+        <h3 className="fk vj ac nj yn">
           Specialized Program to give you a competitive edge in your Career
         </h3>
       </div>
@@ -64,7 +64,7 @@ function Courser() {
         pagination={{
           clickable: true,
         }}
-        modules={[Pagination]}
+        modules={[Pagination,Autoplay]}
         className="mySwiper"
       >
         {slide}

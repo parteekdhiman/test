@@ -1,30 +1,30 @@
-import React from "react";
-import HeroSection from "./main/HeroSection";
-import FeaturesSection from "./main/FeaturesSection";
-import AboutSection from "./main/AboutSection";
-import SupportSection from "./form/SupportSection";
-import ServicesSection from "./main/ServicesSection";
-import CTASection from "./main/CTASection";
-import Package from "./main/Package";
-import StatsSection from "./main/StatsSection";
-import Courseslider from "./main/Courseslider";
-import BlogsSection from "./main/BlogsSection";
-import InternationalCertification from "./main/InternationalCertification";
+import React, { Suspense, lazy } from "react";
+
+const HeroSection = lazy(() => import("./main/HeroSection"));
+const FeaturesSection = lazy(() => import("./main/FeaturesSection"));
+const AboutSection = lazy(() => import("./main/AboutSection"));
+const SupportSection = lazy(() => import("./form/SupportSection"));
+const ServicesSection = lazy(() => import("./main/ServicesSection"));
+const Package = lazy(() => import("./main/Package"));
+const StatsSection = lazy(() => import("./main/StatsSection"));
+const Courseslider = lazy(() => import("./main/Courseslider"));
+const InternationalCertification = lazy(() =>
+  import("./main/InternationalCertification")
+);
 
 function Main() {
   return (
-    <>
+    <Suspense fallback={<div>Loading...</div>}>
       <HeroSection />
       <FeaturesSection />
-      <Courseslider/>
-      <InternationalCertification/>
+      <Courseslider />
+      <InternationalCertification />
       <AboutSection />
       <ServicesSection />
       <StatsSection />
-      {/* <CTASection /> */}
       <Package />
       <SupportSection />
-    </>
+    </Suspense>
   );
 }
 

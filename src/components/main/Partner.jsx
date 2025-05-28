@@ -39,7 +39,7 @@ function Partner() {
       <a
         key={index}
         href={link || "#"}
-        className="rc animate_top"
+        className="rc fade-up"
         rel="noopener noreferrer"
         target="_blank"
       >
@@ -86,7 +86,7 @@ function Partner() {
     <section className="pj vp mr">
       {/* Section Title Start */}
       <div>
-        <div className="animate_top bb ze rj ki xn vq">
+        <div className="fade-up bb ze rj ki xn vq">
           <h2 className="fk vj pr  wm on/5 gq/2 bb _b" style={{color:"white"}}>
             Business Partner of
           </h2>
