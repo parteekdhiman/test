@@ -5,7 +5,7 @@ function CourseList() {
   return (
     <>
       <div>
-        <div className="do ir sp i pg"></div>
+        <div className="coustem"></div>
         <Courses another={coursecontent} />
       </div>
     </>

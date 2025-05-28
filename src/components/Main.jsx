@@ -9,6 +9,7 @@ import Package from "./main/Package";
 import StatsSection from "./main/StatsSection";
 import Courseslider from "./main/Courseslider";
 import BlogsSection from "./main/BlogsSection";
+import InternationalCertification from "./main/InternationalCertification";
 
 function Main() {
   return (
@@ -16,6 +17,7 @@ function Main() {
       <HeroSection />
       <FeaturesSection />
       <Courseslider/>
+      <InternationalCertification/>
       <AboutSection />
       <ServicesSection />
       <StatsSection />
