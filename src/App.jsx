@@ -44,7 +44,7 @@ function App() {
     delay: 0,
     duration: 400,
     easing: "ease",
-    once: false,
+    once: true,
     mirror: false,
     anchorPlacement: "top-bottom",
   });

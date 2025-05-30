@@ -9,18 +9,23 @@ const FeaturesSection = () => {
       id: 1,
       icon: icon01,
       title: "Online Learning",
+      subhead: "Learn at your own pace with expert-led online courses.",
       colorClass: "mh",
     },
     {
       id: 2,
       icon: icon02,
       title: "ISO Certification",
+      subhead:
+        "Gain globally recognized certifications to boost your credibility.",
       colorClass: "nh",
     },
     {
       id: 3,
       icon: icon03,
       title: "Career Mentoring",
+      subhead:
+        "Get personalized guidance to shape and advance your career path.",
       colorClass: "oh",
     },
   ];
@@ -39,6 +44,7 @@ const FeaturesSection = () => {
               </div>
               <div className="tc items-center">
                 <h4 className="ek yj go kk wm xb">{item.title}</h4>
+                {/* <p>{item.subhead}</p> */}
               </div>
             </div>
           ))}

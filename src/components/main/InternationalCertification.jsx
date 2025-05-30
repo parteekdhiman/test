@@ -24,7 +24,7 @@ const CertificationPrograms = () => {
         }
         .container h1 {
           text-align: center;
-          color: rgb(78, 107, 255);
+          color:black;
           font-weight: 700;
           font-size: 2.5rem;
           margin-bottom: 2rem;
